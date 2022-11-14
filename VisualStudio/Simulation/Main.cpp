@@ -3,7 +3,6 @@
 
 int main()
 {
-
     sf::RenderWindow window(sf::VideoMode(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height), "Simulation");
     AssetManager manager;
 

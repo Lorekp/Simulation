@@ -6,9 +6,11 @@ class TerrainGenerator {
 public:
 	TerrainGenerator();
 
+	
+
 private:
 	static TerrainGenerator* sInstance;
-
+	double generateMap(int seed, int width, int height);
 };
 
 #endif
