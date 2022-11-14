@@ -150,8 +150,8 @@
     <ClCompile Include="TerrainGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\FastNoiseLite\FastNoiseLite.h" />
     <ClInclude Include="AssetManager.h" />
+    <ClInclude Include="FastNoiseLite.h" />
     <ClInclude Include="TerrainGenerator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
