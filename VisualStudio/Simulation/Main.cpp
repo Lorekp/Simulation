@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "AssetManager.h"
+#include "TerrainGenerator.h"
 
 int main()
 {
@@ -9,6 +10,9 @@ int main()
     //Background setup
     sf::Texture texture = sf::Texture(AssetManager::GetTexture("PNGs/tile256.png"));
     texture.setRepeated(true);
+
+    //TerrainGen setup
+    TerrainGenerator generator;
 
     sf::RectangleShape background(sf::Vector2f(256 * 5, 256 * 5));
     background.setTextureRect(sf::IntRect(0, 0, 256 * 5, 256 * 5));

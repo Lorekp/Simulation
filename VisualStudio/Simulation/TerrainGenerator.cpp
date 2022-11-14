@@ -14,9 +14,7 @@ TerrainGenerator::TerrainGenerator()
 	sInstance = this;
 }
 
-
-
-double TerrainGenerator::generateMap(int seed, int width, int height) {
+std::vector<sf::Texture> TerrainGenerator::generateMap(int seed, int width, int height) {
 
 	FastNoiseLite gen = FastNoiseLite(seed);
 	gen.SetNoiseType(FastNoiseLite::NoiseType_Perlin);

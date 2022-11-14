@@ -6,11 +6,11 @@ class TerrainGenerator {
 public:
 	TerrainGenerator();
 
-	
+	std::vector<sf::Texture> generateMap(int seed, int width, int height);
 
 private:
 	static TerrainGenerator* sInstance;
-	double generateMap(int seed, int width, int height);
+	
 };
 
 #endif
