@@ -147,9 +147,12 @@
   <ItemGroup>
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="TerrainGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\FastNoiseLite\FastNoiseLite.h" />
     <ClInclude Include="AssetManager.h" />
+    <ClInclude Include="TerrainGenerator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
