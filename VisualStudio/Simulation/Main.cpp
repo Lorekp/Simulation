@@ -1,23 +1,28 @@
 #include <SFML/Graphics.hpp>
 #include "AssetManager.h"
 #include "TerrainGenerator.h"
+#include <vector>
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height), "Simulation");
     AssetManager manager;
+    int mapSizeY = 50;
+    int mapSizeX = 50;
 
-    //Background setup
-    sf::Texture texture = sf::Texture(AssetManager::GetTexture("PNGs/tile256.png"));
-    texture.setRepeated(true);
-
-    //TerrainGen setup
+    //setup tiles
+    sf::Sprite waterTile;
+    sf::Sprite sandTile;
+    sf::Sprite grassTile;
+    const int tileTypeAmount = 3;
+    waterTile.setTexture(AssetManager::GetTexture("Textures/Environment/water1.png"));
+    sandTile.setTexture(AssetManager::GetTexture("Textures/Environment/sandClear.png"));
+    grassTile.setTexture(AssetManager::GetTexture("Textures/Environment/grassClear.png"));
+    sf::Sprite tileTypes[tileTypeAmount] = {waterTile, sandTile, grassTile};
+    
+    //Terrain generation
     TerrainGenerator generator;
-
-    sf::RectangleShape background(sf::Vector2f(256 * 5, 256 * 5));
-    background.setTextureRect(sf::IntRect(0, 0, 256 * 5, 256 * 5));
-    background.setTexture(&texture);
-    background.setPosition((window.getSize().x - (256 * 5)) / 2, (window.getSize().y - (256 * 5)) / 2);
+    sf::Sprite background = generator.generateMap(window, 50, 50, tileTypes);
 
     //Game Loop
     while (window.isOpen())

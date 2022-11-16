@@ -36,4 +36,54 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Textures\Environment\grassRight.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\grassUpper.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\grassUpperLeft.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\grassUpperRight.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\water1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\water2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\grassBottom.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\grassBottomLeft.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\grassBottomRight.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\grassClear.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\grassDetail.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\grassLeft.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\grassPlant.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\sandDetail.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\sandStone.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Textures\Environment\sandClear.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

@@ -88,12 +88,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SFML_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\Simulation\SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\laure\source\repos\Simulation\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>F:\Simulation\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\laure\source\repos\Simulation\SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;freetype.lib;winmm.lib;gdi32.lib;sfml-audio-s-d.lib;openal32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;sfml-network-s-d.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -105,14 +105,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\Simulation\SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\laure\source\repos\Simulation\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>F:\Simulation\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\laure\source\repos\Simulation\SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;opengl32.lib;freetype.lib;winmm.lib;gdi32.lib;sfml-audio-s.lib;openal32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;sfml-network-s.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -153,6 +153,24 @@
     <ClInclude Include="AssetManager.h" />
     <ClInclude Include="FastNoiseLite.h" />
     <ClInclude Include="TerrainGenerator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Textures\Environment\grassBottom.png" />
+    <Image Include="..\..\Textures\Environment\grassBottomLeft.png" />
+    <Image Include="..\..\Textures\Environment\grassBottomRight.png" />
+    <Image Include="..\..\Textures\Environment\grassClear.png" />
+    <Image Include="..\..\Textures\Environment\grassDetail.png" />
+    <Image Include="..\..\Textures\Environment\grassLeft.png" />
+    <Image Include="..\..\Textures\Environment\grassPlant.png" />
+    <Image Include="..\..\Textures\Environment\grassRight.png" />
+    <Image Include="..\..\Textures\Environment\grassUpper.png" />
+    <Image Include="..\..\Textures\Environment\grassUpperLeft.png" />
+    <Image Include="..\..\Textures\Environment\grassUpperRight.png" />
+    <Image Include="..\..\Textures\Environment\sandClear.png" />
+    <Image Include="..\..\Textures\Environment\sandDetail.png" />
+    <Image Include="..\..\Textures\Environment\sandStone.png" />
+    <Image Include="..\..\Textures\Environment\water1.png" />
+    <Image Include="..\..\Textures\Environment\water2.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
