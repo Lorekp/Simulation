@@ -17,7 +17,7 @@ std::vector<int> TerrainGenerator::generateNoiseMap(int seed, int width, int hei
 	FastNoiseLite gen = FastNoiseLite(seed);
 	gen.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
 
-	gen.SetFrequency(0.01f);
+    gen.SetFrequency(0.02f);
 	gen.SetFractalLacunarity(2.f);
 	gen.SetFractalGain(0.5f);
 
@@ -44,17 +44,25 @@ std::vector<int> TerrainGenerator::generateNoiseMap(int seed, int width, int hei
 	return noiseData;
 }
 
-sf::Sprite TerrainGenerator::generateMap(sf::RenderWindow& window, int width, int height, sf::Sprite tileTypes[])
+sf::Sprite TerrainGenerator::generateMap(sf::RenderWindow& window, int width, int height, sf::RenderTexture& terrain, float seed)
 {
+    //setup tiles
+    sf::Sprite waterTile;
+    sf::Sprite sandTile;
+    sf::Sprite grassTile;
+    waterTile.setTexture(AssetManager::GetTexture("Textures/Environment/water1.png"));
+    sandTile.setTexture(AssetManager::GetTexture("Textures/Environment/sandClear.png"));
+    grassTile.setTexture(AssetManager::GetTexture("Textures/Environment/grassClear.png"));
+
+
     //Background setup
-    sf::RenderTexture terrain;
     terrain.create(window.getSize().y, window.getSize().x);
     terrain.clear();
 
-    std::vector<int> genMap = TerrainGenerator::generateNoiseMap(1, width, height);
+    std::vector<int> genMap = TerrainGenerator::generateNoiseMap(seed, width, height);
     //make a background texture out of the single tiles
-    int tilePosX = 0;
-    int tilePosY = 0;
+    float tilePosX = 0;
+    float tilePosY = 0;
     for (int i = 0; i < width * height; i++)
     {
         int tileType = genMap.at(i);
@@ -67,18 +75,18 @@ sf::Sprite TerrainGenerator::generateMap(sf::RenderWindow& window, int width, in
         }
         if (tileType == 0)
         {
-            tileTypes[0].setPosition(tilePosX, tilePosY);
-            terrain.draw(tileTypes[0]);
+            waterTile.setPosition(tilePosX, tilePosY);
+            terrain.draw(waterTile);
         }
         else if (tileType == 1)
         {
-            tileTypes[1].setPosition(tilePosX, tilePosY);
-            terrain.draw(tileTypes[1]);
+            sandTile.setPosition(tilePosX, tilePosY);
+            terrain.draw(sandTile);
         }
         else if (tileType == 2)
         {
-            tileTypes[2].setPosition(tilePosX, tilePosY);
-            terrain.draw(tileTypes[2]);
+            grassTile.setPosition(tilePosX, tilePosY);
+            terrain.draw(grassTile);
         }
     }
     terrain.display();
