@@ -44,7 +44,7 @@ std::vector<int> TerrainGenerator::generateNoiseMap(int seed, int width, int hei
 	return noiseData;
 }
 
-sf::Sprite TerrainGenerator::generateMap(sf::RenderWindow& window, int width, int height, sf::RenderTexture& terrain, float seed)
+sf::Sprite TerrainGenerator::generateMap(int width, int height, sf::RenderTexture& terrain, int seed)
 {
     //setup tiles
     sf::Sprite waterTile;
@@ -53,12 +53,7 @@ sf::Sprite TerrainGenerator::generateMap(sf::RenderWindow& window, int width, in
     waterTile.setTexture(AssetManager::GetTexture("Textures/Environment/water1.png"));
     sandTile.setTexture(AssetManager::GetTexture("Textures/Environment/sandClear.png"));
     grassTile.setTexture(AssetManager::GetTexture("Textures/Environment/grassClear.png"));
-
-
-    //Background setup
-    terrain.create(window.getSize().y, window.getSize().x);
-    terrain.clear();
-
+    
     std::vector<int> genMap = TerrainGenerator::generateNoiseMap(seed, width, height);
     //make a background texture out of the single tiles
     float tilePosX = 0;

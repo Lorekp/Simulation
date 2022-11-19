@@ -1,33 +1,32 @@
 #include <SFML/Graphics.hpp>
 #include "AssetManager.h"
 #include "TerrainGenerator.h"
+#include "EventManager.h"
 #include <vector>
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height), "Simulation");
     AssetManager manager;
+    EventManager handler;
+
     int mapSizeY = 60;
     int mapSizeX = 60;
-    float seed = 324234;
+    int seed = 11022006;
 
     sf::RenderTexture terrain;
+    terrain.create(window.getSize().y, window.getSize().x);
+    terrain.clear();
     
     //Terrain generation
     TerrainGenerator generator;
-    sf::Sprite background = generator.generateMap(window, mapSizeY, mapSizeX, terrain, seed);
+    sf::Sprite background = generator.generateMap(mapSizeY, mapSizeX, terrain, seed);
+    background.setPosition((static_cast<float>(window.getSize().x) - mapSizeX * 16) / 2, (static_cast<float>(window.getSize().y) - mapSizeY * 16) / 2);
 
-
-
-    //Game Loop
+//Game Loop
     while (window.isOpen())
     {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
+        handler.HandleEvents(window);
 
         window.clear();
         window.draw(background);
